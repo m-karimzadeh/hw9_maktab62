@@ -1,0 +1,4 @@
+#container{ max-width: 500px; line-height: 20px; font-size: 15px; margin: auto; }
+#container h1{ text-align: center; font-size: 27px; font-weight: bold; }
+
+#passwordLabel{ display: block; }
