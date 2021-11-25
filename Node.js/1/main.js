@@ -9,3 +9,9 @@ let thisName = prompt("Enter Your Name: ")
 fullNameGenarator(thisName, thisFamily, function(response){
     console.log(`result =====> ${response}`)
 })
+
+fullNameGenarator(thisName, thisFamily, aaa)
+
+function aaa(response){
+    console.log(`result =====> ${response}`)
+}

@@ -16,6 +16,4 @@ function calcFu(num1, num2, operator){
         return num1 - num2;
 }
 
-module.exports = {
-    calcFu: calcFu
-}
+module.exports = calcFu

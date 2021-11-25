@@ -6,16 +6,16 @@ function passwordRegex(pass){
 
 function checkPassword(pass = ''){
     if(pass.length === 0){
-        $('#passwordLabel').removeClass('text-danger text-success').addClass('text-primary')
-        $('#passwordHelp').text('Password input is empty').removeClass('text-danger text-success').addClass('text-secondary')
+        $('#passwordLabel, .passwordIcon').removeClass('colorRed colorGreen').addClass('colorBlue')
+        $('#passwordHelp').text('Password input is empty').removeClass('colorRed colorGreen').addClass('text-secondary')
 
     }else if(passwordRegex(pass)){
-        $('#passwordLabel').removeClass('text-danger text-primary').addClass('text-success')
-        $('#passwordHelp').text('Good :D').removeClass('text-danger text-secondary').addClass('text-success')
+        $('#passwordLabel, .passwordIcon').removeClass('colorRed colorBlue').addClass('colorGreen')
+        $('#passwordHelp').text('Good :D').removeClass('colorRed text-secondary').addClass('colorGreen')
 
     }else{
-        $('#passwordLabel').removeClass('text-success text-primary').addClass('text-danger')
-        $('#passwordHelp').text('Min 8 char with at insert one capital letter, a number and a special character').removeClass('text-success text-secondary').addClass('text-danger')
+        $('#passwordLabel, .passwordIcon').removeClass('colorGreen colorBlue').addClass('colorRed')
+        $('#passwordHelp').text('Min 8 char with at insert one capital letter, a number and a special character').removeClass('colorGreen text-secondary').addClass('colorRed')
     }
 }
 
@@ -26,4 +26,18 @@ $(document).ready(function(){
         var thisPass = $(this).val();
         checkPassword(thisPass)
     });
+    
+    $('#hiddenPasswordIcon').click(function(){
+        $('#hiddenPasswordIcon').hide();
+        $('#showPasswordIcon').show();
+
+        $('#passwordInput').attr('type', 'text');
+    })
+
+    $('#showPasswordIcon').click(function(){
+        $('#showPasswordIcon').hide();
+        $('#hiddenPasswordIcon').show();
+
+        $('#passwordInput').attr('type', 'password');
+    })
 })

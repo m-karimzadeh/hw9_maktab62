@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link href="fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -14,11 +15,17 @@
 
         <section id="passwordBox">
             <label id="passwordLabel" for="passwordInput">Enter Password</label>
-            <input id="passwordInput" type="password">
+
+            <section id="passwordInputGrid">
+                <input id="passwordInput" type="password">
+
+                <i id="hiddenPasswordIcon" class="passwordIcon fas fa-eye-slash"></i>
+                <i id="showPasswordIcon" class="passwordIcon fas fa-eye"></i>
+            </section>
+
             <small id="passwordHelp"></small>
         </section>
     </section>
-    
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </body>
